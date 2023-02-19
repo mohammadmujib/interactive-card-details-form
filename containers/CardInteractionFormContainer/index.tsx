@@ -12,7 +12,6 @@ import { CardDetails } from "types/card";
 import { useForm } from "react-hook-form";
 import CardDetailsForm from "components/CardDetailsForm";
 import CardDetailsComplete from "components/CardDetailsComplete";
-import axios from "axios";
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {}
 
