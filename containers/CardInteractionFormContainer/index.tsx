@@ -7,6 +7,7 @@ import React, {
 } from "react";
 
 import "react-toastify/dist/ReactToastify.min.css";
+import { ToastContainer, toast } from "react-toastify";
 import InteractiveCard from "components/InteractiveCard";
 import { CardDetails } from "types/card";
 import { useForm } from "react-hook-form";
@@ -51,7 +52,10 @@ const CardInteractionFormContainer: React.FC<IProps> = ({ ...props }) => {
 
       if (response.status === 201) {
         setComplete(true);
+        toast("Thank you for registration!", { type: "success" });
         localStorage.setItem("form", JSON.stringify(data));
+      } else {
+        toast("Please re-check your inputs.", { type: "error" });
       }
     } catch (err) {
       console.log(err);
@@ -66,7 +70,6 @@ const CardInteractionFormContainer: React.FC<IProps> = ({ ...props }) => {
   const cardDetails: CardDetails = useMemo(() => {
     return {
       cardholderName: cardholderName ? cardholderName : "Jane Appleseed",
-
       collegeName: collegeName ? collegeName : "G.H raisoni",
       phoneNumber: phoneNumber ? phoneNumber : "9999 999 999",
       branch: branch ? branch : "Architect",
@@ -77,7 +80,7 @@ const CardInteractionFormContainer: React.FC<IProps> = ({ ...props }) => {
   return (
     <div {...props}>
       <InteractiveCard cardDetails={cardDetails} />
-
+      <ToastContainer />
       {!complete ? (
         <CardDetailsForm
           register={register}
