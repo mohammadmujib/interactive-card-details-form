@@ -45,7 +45,7 @@ const CardInteractionFormContainer: React.FC<IProps> = ({ ...props }) => {
     try {
       // ⛔️ TypeError: Failed to fetch
       // 👇️ incorrect or incomplete URL
-      const response = await fetch("http://localhost:3000/api/notion", {
+      const response = await fetch("https://form.morphschool.in/api/notion", {
         method: "POST",
         body: JSON.stringify(data),
       });
