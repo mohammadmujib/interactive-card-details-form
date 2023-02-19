@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { ToastContainer, toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.min.css";
 import InteractiveCard from "components/InteractiveCard";
 import { CardDetails } from "types/card";
@@ -54,9 +54,6 @@ const CardInteractionFormContainer: React.FC<IProps> = ({ ...props }) => {
       if (response.status === 201) {
         setComplete(true);
         localStorage.setItem("form", JSON.stringify(data));
-        toast("Thank you for contacting us!", { type: "success" });
-      } else {
-        toast("Please re-check your inputs.", { type: "error" });
       }
     } catch (err) {
       console.log(err);
