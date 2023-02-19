@@ -13,7 +13,7 @@ const CardDetailsComplete: React.FC<IProps> = ({ onContinue, ...props }) => {
       <CompleteIcon className={styles.icon} />
       <div className={styles.title}>Thank you!</div>
       <div className={styles.description}>
-        For registration link will be activated on 4th march
+        For Exam, link will be activated on 4th march at 7:00 pm
       </div>
 
       <div className={styles.buttonContainer}>

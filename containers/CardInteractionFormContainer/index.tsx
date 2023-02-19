@@ -40,7 +40,6 @@ const CardInteractionFormContainer: React.FC<IProps> = ({ ...props }) => {
 
   const onSubmit = useCallback(async (data) => {
     // e.preventDefault()
-    alert(JSON.stringify(data));
 
     try {
       // ⛔️ TypeError: Failed to fetch

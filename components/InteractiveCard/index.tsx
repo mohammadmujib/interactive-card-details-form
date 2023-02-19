@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import { CardDetails } from "types/card";
 import CardLogo from "/public/img/card-logo.svg";
@@ -6,10 +6,20 @@ import CardLogo from "/public/img/card-logo.svg";
 interface IProps {
   cardDetails: CardDetails;
 }
-
+type itemType = {
+  cardholderName?: string;
+  collegeName?: string;
+  phoneNumber?: string;
+  branch?: string;
+  year?: string;
+};
 const InteractiveCard: React.FC<IProps> = ({ cardDetails }) => {
-  const { cardholderName, cardNumber, collegeName, phoneNumber, branch, year } =
+  const [item, setItem] = useState<any>(null);
+  const { cardholderName, collegeName, phoneNumber, branch, year } =
     cardDetails;
+  useEffect(() => {
+    setItem(JSON.parse(localStorage.getItem("form") || "{}"));
+  }, []);
 
   return (
     <div className={styles.interactiveCard}>
@@ -36,19 +46,23 @@ const InteractiveCard: React.FC<IProps> = ({ cardDetails }) => {
             <CardLogo className={styles.logo} role={undefined} />
 
             <div>
-              <div style={{ marginBottom: "20px" }}>{cardholderName}</div>
+              <div style={{ marginBottom: "20px" }}>
+                {item?.cardholderName ?? cardholderName}
+              </div>
 
               <div className={styles.bottom}>
                 <div className={styles.cardholderName}>
                   <span style={{ marginRight: "3px" }}>+91</span>
-                  {phoneNumber}
+                  {item?.phoneNumber ?? phoneNumber}
                 </div>
                 <div className={styles.expireDate}>
-                  {branch} / {year} yr
+                  {item?.branch ?? branch} / {item?.year ?? year} yr
                 </div>
               </div>
               <div style={{ marginTop: "5px" }} className={styles.bottom}>
-                <div className={styles.expireDate}>{collegeName}</div>
+                <div className={styles.expireDate}>
+                  {item?.collegeName ?? collegeName}
+                </div>
               </div>
             </div>
           </div>
