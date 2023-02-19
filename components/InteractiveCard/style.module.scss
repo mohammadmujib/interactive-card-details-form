@@ -1,0 +1,160 @@
+@import "styles/utils";
+
+.interactiveCard {
+  position: relative;
+  height: 251px;
+
+  @include media(">desktop") {
+    min-width: 541px;
+    height: initial;
+    display: flex;
+    flex-direction: column-reverse;
+    filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142));
+  }
+
+  .image {
+    height: 100%;
+    width: 105%;
+  }
+
+  .card {
+    position: relative;
+    width: 286px;
+    height: 200px;
+    color: #FFFFFF;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include media(">desktop") {
+      width: 447px;
+      height: 245px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
+
+  .cardBack {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include media(">desktop") {
+      position: relative;
+      padding-top: 37px;
+      padding-left: 94px;
+    }
+
+    .signatureBox {
+      position: absolute;
+      top: 46%;
+      right: 12%;
+      font-size: 9px;
+      line-height: 11px;
+      text-align: right;
+      letter-spacing: 1.28571px;
+
+      @include media(">desktop") {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .cardFront {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.143));
+
+    @include media(">desktop") {
+      position: relative;
+      top: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 17.6px 20.89px 19.6px 19px;
+
+      @include media(">desktop") {
+        padding: 28px 31.86px 26.5px 32px;
+      }
+
+      .logo {
+        width: 54px;
+
+        @include media(">desktop") {
+          width: 84px;
+          height: 47px;
+        }
+      }
+
+      .cardNumber {
+        line-height: 23px;
+        letter-spacing: 2.2px;
+        margin-bottom: 17px;
+
+        @include media(">desktop") {
+          font-size: 28px;
+          line-height: 36px;
+          letter-spacing: 3.42222px;
+          margin-bottom: 25.5px;
+        }
+      }
+
+      .phoneNumber {
+        line-height: 23px;
+        letter-spacing: 2.2px;
+        margin-bottom: 17px;
+
+        @include media(">desktop") {
+          font-size: 28px;
+          line-height: 36px;
+          letter-spacing: 3.42222px;
+          margin-bottom: 25.5px;
+        }
+      }
+
+      .bottom {
+        span {
+          font-size: 9px;
+        }
+
+        display: flex;
+        justify-content: space-between;
+
+        .cardholderName {
+          font-size: 9px;
+          line-height: 11px;
+          letter-spacing: 1.29px;
+
+          @include media(">desktop") {
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 2px;
+          }
+        }
+
+        .expireDate {
+          font-size: 9px;
+          line-height: 11px;
+          letter-spacing: 1.29px;
+          text-align: right;
+
+          @include media(">desktop") {
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+  }
+}

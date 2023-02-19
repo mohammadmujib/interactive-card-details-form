@@ -1,0 +1,30 @@
+
+.input {
+  width: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #21092F;
+  background: #FFFFFF;
+  border: 1px solid #DFDEE0;
+  border-radius: 8px;
+  padding: 11px 16px;
+  outline: none;
+  caret-color: #21092F;
+
+  &::placeholder {
+    opacity: 0.25;
+  }
+
+  &:focus {
+    border-color: transparent;
+    background-image: linear-gradient(white, white),
+                      linear-gradient(to bottom, #6348FE, #610595);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  &.error {
+    border-color: #FF5050;
+  }
+}

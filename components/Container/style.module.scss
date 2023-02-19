@@ -1,0 +1,16 @@
+@import "styles/utils";
+
+.container {
+  max-width: 343px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+
+  @include media(">desktop") {
+    max-width: 1110px;
+  }
+
+  @include media(">1126px") {
+    padding: 0;
+  }
+}

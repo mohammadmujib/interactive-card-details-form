@@ -1,0 +1,73 @@
+@import "styles/utils";
+
+.cardDetailsForm {
+  position: relative;
+  max-width: 327px;
+  text-transform: uppercase;
+  color: #21092F;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media(">desktop") {
+    max-width: 381px;
+  }
+
+  >div {
+    margin-bottom: 20px;
+
+    @include media(">desktop") {
+      margin-bottom: 26px;
+    }
+  }
+
+  label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 2px;
+  }
+
+  input {
+    margin-top: 9px;
+  }
+
+  .expireDateInputContainer {
+    display: flex;
+    grid-gap: 8px;
+  }
+
+  .row {
+    display: flex;
+    grid-gap: 11px;
+
+    @include media(">desktop") {
+      grid-gap: 26px;
+    }
+
+    >div {
+      flex: 1;
+    }
+  }
+
+  .drop {
+    margin-top: 9px;
+
+  }
+
+  .error {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF5050;
+    margin-top: 8px;
+    text-transform: initial;
+  }
+
+  .buttonContainer {
+    margin-top: 8px;
+
+    @include media(">desktop") {
+      margin-top: 20px;
+    }
+  }
+}
