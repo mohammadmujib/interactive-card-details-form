@@ -7,6 +7,7 @@ import React, {
 } from "react";
 
 import "react-toastify/dist/ReactToastify.min.css";
+import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import InteractiveCard from "components/InteractiveCard";
 import { CardDetails } from "types/card";
@@ -17,6 +18,7 @@ import CardDetailsComplete from "components/CardDetailsComplete";
 interface IProps extends HTMLAttributes<HTMLDivElement> {}
 
 const CardInteractionFormContainer: React.FC<IProps> = ({ ...props }) => {
+  const router = useRouter();
   const {
     handleSubmit,
     register,
@@ -63,9 +65,8 @@ const CardInteractionFormContainer: React.FC<IProps> = ({ ...props }) => {
   }, []);
 
   const onContinue = useCallback(() => {
-    reset();
-    setComplete(false);
-  }, [reset]);
+    router.push("https://forms.gle/gezGRRCxxr9Pyc9K9");
+  }, []);
 
   const cardDetails: CardDetails = useMemo(() => {
     return {
